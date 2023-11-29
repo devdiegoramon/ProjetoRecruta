@@ -1,6 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useContext, createContext } from 'react';
 import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+import BottomNavigation from './src/components/BottomNavigation';
+import { Ionicons } from '@expo/vector-icons';
 
 // Contexto de Autenticação
 const AuthContext = createContext();
@@ -44,6 +46,7 @@ const App = () => {
   const { user, dia } = useAuth();
 
   return (
+  
     <View style={styles.container}>
       <Navbar />
 
@@ -55,7 +58,8 @@ const App = () => {
         <Text style={styles.textContent}>Seu conteúdo vai aqui...</Text>
       </ScrollView>
 
-      <ButtonNavbar />
+      <BottomNavigation/>
+      
 
       <StatusBar style="auto" />
     </View>
@@ -92,15 +96,6 @@ const Tab = ({ title }) => {
   );
 };
 
-const ButtonNavbar = () => {
-  return (
-    <View style={styles.buttonNavbar}>
-      <Text style={styles.button}>Botão 1</Text>
-      <Text style={styles.button}>Botão 2</Text>
-      <Text style={styles.button}>Botão 3</Text>
-    </View>
-  );
-};
 
 const styles = StyleSheet.create({
   container: {
