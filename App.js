@@ -1,8 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useState, useContext, createContext } from 'react';
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, StatusBar } from 'react-native';
 import BottomNavigation from './src/components/BottomNavigation';
 import { Ionicons } from '@expo/vector-icons';
+import Carrossel from './src/components/Carrossel';
 
 // Contexto de Autenticação
 const AuthContext = createContext();
@@ -48,9 +48,13 @@ const App = () => {
   return (
   
     <View style={styles.container}>
+      <StatusBar/>
       <Navbar />
 
+
       <ScrollView style={styles.content}>
+      <Carrossel/>
+
         <Text style={styles.contentTitle}>Conteúdo Principal</Text>
 
         <Tabs />
@@ -61,7 +65,7 @@ const App = () => {
       <BottomNavigation/>
       
 
-      <StatusBar style="auto" />
+      {/* <StatusBar style="auto" /> */}
     </View>
   );
 };
