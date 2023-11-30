@@ -1,45 +1,46 @@
 import React from 'react';
-import { StyleSheet, View, Text, Dimensions, Image } from 'react-native';
+import { StyleSheet, View, Dimensions, Image } from 'react-native';
 import PagerView from 'react-native-pager-view';
-import imagem1 from "../../../assets/bannerslide.png"
+import imagem1 from "../../../assets/banners/bannerslide1.png";
+import imagem2 from "../../../assets/banners/bannerslide2.png";
+import imagem3 from "../../../assets/banners/bannerslide3.png";
+import imagem4 from "../../../assets/banners/bannerslide4.png";
 
+const width = Dimensions.get("screen").width;
 
-//Pega a altura da tela para fazer um calculo no banner, para o banner funcionar corretamente, as imagens devem ter o mesmo tamanho 
-const width = Dimensions.get("screen").width
+const imagens = [imagem1, imagem2, imagem3, imagem4];
 
-
-const Carrossel = () =>{
-    return(
-        <View >
-          <PagerView style={styles.viewPager} initialPage={0}>
-              <View style={styles.page} key="1">
-                <Image style={styles.imagemSlide} source={imagem1}/>
-              </View>
-              <View style={styles.page} key="2">
-                <Text>Second page</Text>
-              </View>
-              <View style={styles.page} key="3">
-                <Text>Third page</Text>
-              </View>
-          </PagerView>
-        </View>
-    )
-}
+const Carrossel = () => {
+  return (
+    <View style={styles.container}>
+      <PagerView style={styles.viewPager} initialPage={0}>
+        {imagens.map((imagem, index) => (
+          <View style={styles.page} key={index.toString()}>
+            <Image style={styles.imagemSlide} source={imagem} />
+          </View>
+        ))}
+      </PagerView>
+    </View>
+  );
+};
 
 export default Carrossel;
 
-
 const styles = StyleSheet.create({
-    viewPager: {
-      width: "100%",
-      //Calculo usando a altura total da tela
-      height: 203 / 414 * width,
-    },
-    page: {
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    imagemSlide:{
-      borderRadius: 30
-    }
+  container: {
+    flex: 1,
+  },
+  viewPager: {
+    width: "100%",
+    height: 100 / 1100 * width * 4, // Ajustando a altura para mostrar quatro itens
+  },
+  page: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  imagemSlide: {
+    borderRadius: 20,
+    width: '100%',
+    height: '100%',
+  },
 });

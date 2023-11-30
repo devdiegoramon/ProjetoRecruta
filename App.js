@@ -38,10 +38,6 @@ const useAuth = () => {
   }
   return context;
 };
-// ... (seu código anterior)
-
-// ... (seu código anterior)
-
 const App = () => {
   const { user, dia } = useAuth();
 
