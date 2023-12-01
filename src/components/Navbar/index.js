@@ -1,18 +1,40 @@
 import React from "react";
+import { StyleSheet } from "react-native";
 import { View, Text, Image } from 'react-native';
-import { useAuth } from '../../../App';  // Substitua pelo caminho correto para o arquivo App.js
 
 const Navbar = () => {
-  const { dia, user } = useAuth();
+  // const { dia, user } = useAuth();
 
   return (
     <View style={styles.navbarTitleContainer}>
-      <Text style={styles.diaSemana}>{dia}</Text>
-      <Text style={styles.navbarTitle}>{user.nome}</Text>
-      <Image source={require('../../../assets/recruta.jpg')} style={styles.navbarImage} />
+      <Text style={styles.navbarTitle}>Olá Recruta 01</Text>
+      <Image source={require("../../../assets/recruta.jpg")} style={styles.navbarImage} />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  navbarTitleContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: 10,
+  },
+  navbarImage: {
+    width: 55,
+    height: 55,
+    borderRadius: 25,
+  },
+  navbarTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  diaSemana: {
+    fontSize: 14, // Tamanho menor para o dia da semana
+    color: 'white',
+  },
+})
 
 
 
