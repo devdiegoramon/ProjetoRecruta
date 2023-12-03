@@ -1,15 +1,28 @@
-import React from "react";
+import React, {useState} from "react";
 import { View, Text, StyleSheet, FlatList, Image, TouchableHighlight } from 'react-native';
 import { Ionicons } from "@expo/vector-icons";
 import imagem1 from "../../../../../assets/Cursos/topcursos.png"
 import { useNavigation } from '@react-navigation/native';
+import CursoDetalhe from "../../../CursoDetalhe";
 
 const Cursos = () => {
     const navigation = useNavigation();
 
-    const handlePaginaDetalhe = (itemId) => {
-        // Navegar para a tela desejada, por exemplo, 'CursoDetalhe'
-        navigation.navigate('CursoDetalhe', { itemId });
+    // const handlePaginaDetalhe = (itemId) => {
+    //     // Navegar para a tela desejada, por exemplo, 'CursoDetalhe'
+    //     navigation.navigate('CursoDetalhe', { itemId });
+    // };
+
+    const [modalActive, setModalActive] = useState(false);
+    const [selectedItemId, setSelectedItemId] = useState(null);
+
+    const openModal = (itemId) => {
+        setModalActive(true);
+        setSelectedItemId(itemId)
+    };
+
+    const closeModal = () => {
+        setModalActive(false);
     };
 
     const items = [
@@ -31,7 +44,7 @@ const Cursos = () => {
                 renderItem={({ item }) => (
                     <TouchableHighlight
                         style={styles.card}
-                        onPress={() => handlePaginaDetalhe(item.id)} 
+                        onPress={() => openModal(item.id)} 
                         underlayColor="transparent" // Evita o efeito de destaque ao clicar
                     >
                         <View>
@@ -49,6 +62,12 @@ const Cursos = () => {
                         </View>
                     </TouchableHighlight>
                 )}
+            />
+            <CursoDetalhe
+
+                visible={modalActive}
+                closeModal={closeModal}
+                cursoId={selectedItemId}
             />
         </View>
     )

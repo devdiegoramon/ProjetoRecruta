@@ -47,17 +47,7 @@ const AppRoutes = () => {
             }}
           />
         ))}
-        {navigationHiddenItens.map((telaOculta)=> (
-          <TabScreen
-            key={telaOculta.name}
-            name={telaOculta.name}
-            component={telaOculta.component}
-            options={{
-              headerShown: false,
-              tabBarButton: () => false,
-            }}
-          />
-        ))}
+
         
       </TabNavigator>
     </NavigationContainer>
