@@ -1,35 +1,23 @@
 import React, { useState, useContext, createContext } from 'react';
 import { StyleSheet, Text, View, Image, ScrollView, StatusBar } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import Carrossel from './src/components/Carrossel';
 import AppRoutes from './src/routes/app.routes';
 import Navbar from './src/components/Navbar';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const App = () => {
-
   return (
-  
-    <View style={styles.container}>
-      <StatusBar/>
-      <Navbar  />
-      {/*
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <View style={styles.container}>
+        <StatusBar />
+        <Navbar />
+        
+        <AppRoutes/>
+        
 
-
-      <ScrollView style={styles.content}>
-      <Carrossel/>
-
-
-        <Tabs />
-
-        <Text style={styles.textContent}>Seu conteúdo vai aqui...</Text>
-      </ScrollView>
-
-      <BottomNavigation/> */}
-      <AppRoutes/>
-      
-
-      {/* <StatusBar style="auto" /> */}
-    </View>
+        {/* <StatusBar style="auto" /> */}
+      </View>
+    </GestureHandlerRootView>
+    
   );
 };
 

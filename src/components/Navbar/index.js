@@ -1,10 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import { StyleSheet } from "react-native";
 import { View, Text, Image } from 'react-native';
 
 const Navbar = () => {
-  // const { dia, user } = useAuth();
-
   return (
     <View style={styles.navbarTitleContainer}>
       <Text style={styles.navbarTitle}>Olá Recruta 01</Text>

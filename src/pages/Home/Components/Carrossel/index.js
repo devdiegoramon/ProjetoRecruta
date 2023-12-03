@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, View, Dimensions, Image } from 'react-native';
 import PagerView from 'react-native-pager-view';
-import imagem1 from "../../../assets/banners/bannerslide1.png";
-import imagem2 from "../../../assets/banners/bannerslide2.png";
-import imagem3 from "../../../assets/banners/bannerslide3.png";
-import imagem4 from "../../../assets/banners/bannerslide4.png";
+import imagem1 from "../../../../../assets/banners/bannerslide1.png";
+import imagem2 from "../../../../../assets/banners/bannerslide2.png";
+import imagem3 from "../../../../../assets/banners/bannerslide3.png";
+import imagem4 from "../../../../../assets/banners/bannerslide4.png";
 
 const width = Dimensions.get("screen").width;
 
