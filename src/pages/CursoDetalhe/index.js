@@ -70,9 +70,9 @@ const CursoDetalhe = ({ visible, closeModal, cursoId }) => {
 
               <Tabs tabSelecionada={tabSelecionada} onTabPress={handleTabPress} style={styles.Tabs} />
 
-              {/* <Text>{cursoId}</Text> */}
+              <Text>{cursoId}</Text>
               <TouchableOpacity style={styles.IniciarButton} onPress={() => console.log('Botão pressionado')}>
-                <Text style={styles.IniciarTexto}>Clique em Mim</Text>
+                <Text style={styles.IniciarTexto}>Iniciar curso</Text>
               </TouchableOpacity>
             </View>
           </ScrollView>

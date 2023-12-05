@@ -1,18 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 import { View, Text, StyleSheet, FlatList, TouchableHighlight } from 'react-native';
 import { Ionicons } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
-
-
-
+import CategoriaIndividual from "../../../CategoriaIndividual";
 
 const Categorias = ()=>{
+    const [modalActive, setModalActive] = useState(false);
+    const [selectedItemId, setSelectedItemId] = useState(null);
 
-    const navigation = useNavigation()
-    
-    const handlePaginaCategoria = (categoriaId) =>{
-        navigation.navigate('CategoriaIndividual', { categoriaId })
-    }
+    const openModal = (itemId) => {
+        setModalActive(true);
+        setSelectedItemId(itemId)
+    };
+
+    const closeModal = () => {
+        setModalActive(false);
+    };
 
     const items = [
         {id:1, titulo: "Segurança", texto: "150 cursos", icon: "home-outline"},
@@ -32,7 +34,7 @@ const Categorias = ()=>{
             keyExtractor={(item) => item.id.toString()}
             renderItem={({ item }) => (
                 <TouchableHighlight
-                        onPress={() => handlePaginaCategoria(item.id)} 
+                        onPress={() => openModal(item.id)}
                         underlayColor="transparent" // Evita o efeito de destaque ao clicar
                     >
                     <View style={styles.card}>
@@ -45,6 +47,11 @@ const Categorias = ()=>{
                 </TouchableHighlight>
                 
             )}
+            />
+            <CategoriaIndividual
+            visible={modalActive}
+            closeModal={closeModal}
+            cursoId={selectedItemId}
             />
         </View>
         
