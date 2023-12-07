@@ -3,8 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../pages/Home';
+import TodosCursos from '../pages/TodosCursos';
 import Cursos from '../pages/MeusCursos';
-import Blog from '../pages/Blog';
 import Profile from '../pages/Profile';
 import CursoDetalhe from '../pages/CursoDetalhe';
 import CategoriaIndividual from '../pages/CategoriaIndividual';
@@ -15,9 +15,9 @@ const { Navigator: StackNavigator, Screen: StackScreen } = createStackNavigator(
 
 const navigationItems = [
   { name: 'Home', icon: 'home', component: Home },
-  { name: 'courses', icon: 'play-circle', component: Cursos },
-  { name: 'blog', icon: 'book', component: Blog },
-  { name: 'profile', icon: 'person-circle', component: Profile }
+  { name: 'Meus Cursos', icon: 'play-circle', component: Cursos },
+  { name: 'Cursos', icon: 'book', component: TodosCursos },
+  { name: 'Perfil', icon: 'person-circle', component: Profile }
 ];
 
 const navigationHiddenItens = [
