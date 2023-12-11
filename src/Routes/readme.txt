@@ -1,0 +1,2 @@
+Aqui deve ficar a configuração de rotas do aplicativo e dever ser usado a biblioteca do react-navigation ela é atual e funciona de forma estavel, outras libs foram testadas e essa é a melhor
+Aqui também vai ficar a configuração do bottom navigation, para mais informações, existe um exemplo na primeira versão do app

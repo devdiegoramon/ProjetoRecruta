@@ -1,0 +1,1 @@
+O arquivo index e styles seguem o mesmo padrão do componentes, então para mais informação, leia o readme de /src/components

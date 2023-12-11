@@ -1,0 +1,1 @@
+Dentro da pasta Screens deve ficar as pastas exclusivas a cada tela, e dentro dessa pasta, pode existir uma nova pasta de components, que sera usada para os componentes exclusivos dessa tela

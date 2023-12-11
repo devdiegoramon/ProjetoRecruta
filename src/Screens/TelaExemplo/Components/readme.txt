@@ -1,0 +1,1 @@
+Aqui fica o componente exclusivo da tela, eles são exatamente iguais a os componentes gerais

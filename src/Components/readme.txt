@@ -1,0 +1,1 @@
+A pasta Components dentro do src deve ter APENAS os componentes que serão usado em varios locais da aplicação, ou seja, componentes que serão usados dentro do app.js ou em varias paginas

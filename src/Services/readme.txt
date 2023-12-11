@@ -1,0 +1,1 @@
+Aqui nessa pasta ficam todas as criações de instancias do axios, ou seja, cada arquivo é responsavel por estabelecer uma conexão com uma api externa
